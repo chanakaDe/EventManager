@@ -1,127 +1,131 @@
 <!--Adding page content-->
-<div ng-controller="InvoiceController">
+<div ng-controller="SessionController">
 
     <div style="padding-left: 130px;padding-right: 20px;">
         <div class="ui raised segment">
-            <a class="ui teal ribbon label">Purchase Order</a>
-            <a class="ui blue ribbon label">Order to Supplier</a>
-            <br><br>
+            <a class="ui teal ribbon label">Session Management</a>
+            <a class="ui blue ribbon label">Add New Session</a>
+            <br><br><br>
 
             <div class="ui form">
                 <div class="fields">
-                    <div class="four wide field">
-                        <label>Supplier Name</label>
+                    <div class="five wide field">
+                        <label>Session Title</label>
 
-                        <select class="ui search dropdown" ng-model="purchase.supplierId">
-                            <option value="">Select Supplier</option>
-                            <option ng-repeat="data in allSuppliers" value="{{data.supplierId}}">
-                                {{data.supplierName}}
-                            </option>
-                        </select>
-                    </div>
-                    <div class="four wide field">
-                        <label>Order Date</label>
-                        <input id="datetimepicker" ng-model="purchase.orderDate" type="text" placeholder="Select Date"
-                               ng-blur="savePurchaseOrder()">
+                        <!--<select class="ui search dropdown" ng-model="purchase.supplierId">-->
+                        <!--<option value="">Select Supplier</option>-->
+                        <!--<option ng-repeat="data in allSuppliers" value="{{data.supplierId}}">-->
+                        <!--{{data.supplierName}}-->
+                        <!--</option>-->
+                        <!--</select>-->
+
+                        <input ng-model="session.title" type="text"
+                               placeholder="Select Date">
                     </div>
 
-                    <div class="four wide field">
-                        <label>Order Value</label>
-                        <a class="ui teal tag label big"><span ng-bind="order_price"></span></a>
-                        <a href="#/purchase_view" class="ui button blue">View Orders</a>
+                    <div class="five wide field">
+                        <label>Session Subtitle</label>
+
+                        <input ng-model="session.subTitle" type="text"
+                               placeholder="Select Date">
+                    </div>
+
+
+                    <div class="fields">
+                        <div class="five wide field">
+                            <label>Abstract</label>
+
+                            <input ng-model="session.abstract" type="text"
+                                   placeholder="Select Date">
+                        </div>
+
+                        <div class="five wide field">
+                            <label>Type</label>
+
+                            <select class="ui search dropdown" ng-model="session.type">
+                                <option value="">Select Type</option>
+                                <option value="Demo">Demo</option>
+                                <option value="Talk">Talk</option>
+                                <option value="Discussion">Discussion</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="five wide field">
+                            <label>Start Time</label>
+
+                            <input id="datetimepicker" ng-model="session.startTime" type="text"
+                                   placeholder="Select Date">
+                        </div>
+
+                        <div class="five wide field">
+                            <label>End Time</label>
+
+                            <input id="datetimepicker1" ng-model="session.endTime" type="text"
+                                   placeholder="Select Date">
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="five wide field">
+                            <label>Level</label>
+
+                            <select class="ui search dropdown" ng-model="session.level">
+                                <option value="">Select Level</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Advanced">Advanced</option>
+                            </select>
+                        </div>
+
+                        <div class="five wide field">
+                            <label>Location</label>
+
+                            <select class="ui search dropdown" ng-model="session.location">
+                                <option value="">Select Location</option>
+                                <option value="Hall 1">Hall 1</option>
+                                <option value="Hall 2">Hall 2</option>
+                                <option value="Hall 3">Hall 3</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-        </div>
-    </div>
-    <div style="padding-left: 130px;padding-right: 20px;">
-        <div class="ui raised segment">
-            <a class="ui teal ribbon label">Purchase Order</a>
-            <a class="ui blue ribbon label">Add Items to Order</a>
-            <br><br>
-
-            <div class="ui form">
-                <div class="fields">
-                    <div class="three wide field">
-                        <label>Item</label>
-
-                        <select class="ui search dropdown" ng-model="purchase.itemcode" ng-change="getItemPrice()">
-                            <option value="">Select Product</option>
-                            <option ng-repeat="data in allItems" value="{{data.itemId}}-{{data.itemName}}">
-                                {{data.itemName}}
-                            </option>
-                        </select>
-
-                    </div>
-
-                    <div class="three wide field">
-                        <label>Unit Cost</label>
-                        <input type="text" ng-model="purchase.unitprice" placeholder="Unit Rate">
-                    </div>
-
-                    <div class="three wide field">
-                        <label>Quantity</label>
-                        <input type="text" ng-model="purchase.qty" placeholder="Enter Quantity"
-                               ng-blur="calculate()">
-                    </div>
-
-                    <!--<div class="three wide field">-->
-                    <!--<label>Tax Rate (%)</label>-->
-                    <!--<input type="text" ng-model="purchase.tax" placeholder="Enter Tax Amount" value="15">-->
-                    <!--</div>-->
-
-                    <div class="three wide field">
-                        <label>Amount</label>
-                        <input type="text" ng-model="purchase.amount" placeholder="Enter Amount">
-                    </div>
-
-
-                    <div class="one wide field">
-                        <label>Add</label>
-                        <button class="ui blue button" ng-click="saveCustomerOrderItem()">Add</button>
-                    </div>
-                </div>
+                <button class="ui button teal">Add Session</button>
             </div>
         </div>
     </div>
 
-    <div style="padding-left: 130px;padding-right: 20px;">
-        <div class="ui raised segment">
+    <!--<div style="padding-left: 130px;padding-right: 20px;">-->
+        <!--<div class="ui raised segment">-->
 
-            <table class="ui sortable celled table">
-                <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Unit Cost</th>
-                    <th>Quantity</th>
-                    <th>Amount</th>
-                    <th>Options</th>
-                </tr>
-                </thead>
-                <tbody>
+            <!--<table class="ui sortable celled table">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th>Item</th>-->
+                    <!--<th>Unit Cost</th>-->
+                    <!--<th>Quantity</th>-->
+                    <!--<th>Amount</th>-->
+                    <!--<th>Options</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
 
-                <tr ng-repeat="item in orderItems">
-                    <td>{{item.itemName}}</td>
-                    <td>{{item.quentity}}</td>
-                    <td>{{item.rate}}</td>
-                    <td>{{item.amount}}</td>
-                    <td>
-                        <button class="ui icon button red" ng-click="removeItem(item.customerOrderHasItemId)">
-                            <i class="remove circle icon"></i>
-                        </button>
-                    </td>
-                </tr>
+                <!--<tr ng-repeat="item in orderItems">-->
+                    <!--<td>{{item.itemName}}</td>-->
+                    <!--<td>{{item.quentity}}</td>-->
+                    <!--<td>{{item.rate}}</td>-->
+                    <!--<td>{{item.amount}}</td>-->
+                    <!--<td>-->
+                        <!--<button class="ui icon button red" ng-click="removeItem(item.customerOrderHasItemId)">-->
+                            <!--<i class="remove circle icon"></i>-->
+                        <!--</button>-->
+                    <!--</td>-->
+                <!--</tr>-->
 
-                </tbody>
-            </table>
-            <a ng-click="updateOrder()" class="ui button teal">Save Purchase Order</a>
-
-            <a class="ui button blue"
-               href="http://192.168.1.101:8080/web/mintbooks/v1/reports/customer_invoice?customerOrderId={{order_id}}">Print
-                Purchase Order</a>
-        </div>
-    </div>
+                <!--</tbody>-->
+            <!--</table>-->
+        <!--</div>-->
+    <!--</div>-->
 
 </div>
 <script>

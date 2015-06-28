@@ -7,8 +7,8 @@ module.config(function ($routeProvider) {
         .when('/', {
             templateUrl: 'static/app/template/home/Home.html',
             controller: ''
-        }).when('/income', {
-            templateUrl: 'static/app/template/income/Income.html',
+        }).when('/add_session', {
+            templateUrl: 'static/app/template/session/AddSession.html',
             controller: ''
         }).otherwise({
             redirectTo: '/'
