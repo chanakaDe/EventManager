@@ -167,6 +167,7 @@
                         </div>
                     </div>
                     <br>
+
                     <div class="fields">
                         <div class="six wide field">
 
@@ -179,43 +180,9 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-
-    <!--<div style="padding-left: 130px;padding-right: 20px;">-->
-    <!--<div class="ui raised segment">-->
-
-    <!--<table class="ui sortable celled table">-->
-    <!--<thead>-->
-    <!--<tr>-->
-    <!--<th>Item</th>-->
-    <!--<th>Unit Cost</th>-->
-    <!--<th>Quantity</th>-->
-    <!--<th>Amount</th>-->
-    <!--<th>Options</th>-->
-    <!--</tr>-->
-    <!--</thead>-->
-    <!--<tbody>-->
-
-    <!--<tr ng-repeat="item in orderItems">-->
-    <!--<td>{{item.itemName}}</td>-->
-    <!--<td>{{item.quentity}}</td>-->
-    <!--<td>{{item.rate}}</td>-->
-    <!--<td>{{item.amount}}</td>-->
-    <!--<td>-->
-    <!--<button class="ui icon button red" ng-click="removeItem(item.customerOrderHasItemId)">-->
-    <!--<i class="remove circle icon"></i>-->
-    <!--</button>-->
-    <!--</td>-->
-    <!--</tr>-->
-
-    <!--</tbody>-->
-    <!--</table>-->
-    <!--</div>-->
-    <!--</div>-->
-
 </div>
 <script>
     $('.dropdown')
@@ -242,8 +209,8 @@
                 ]
             }
         },
-        timepicker: false,
-        format: 'Y-m-d'
+        timepicker: true,
+        format: 'Y-m-d/H:i'
     });
     jQuery('#datetimepicker1').datetimepicker({
         lang: 'en',
@@ -260,7 +227,7 @@
                 ]
             }
         },
-        timepicker: false,
-        format: 'Y-m-d'
+        timepicker: true,
+        format: 'Y-m-d/H:i'
     });
 </script>
