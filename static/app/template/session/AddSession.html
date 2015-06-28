@@ -20,14 +20,14 @@
                         <!--</select>-->
 
                         <input ng-model="session.title" type="text"
-                               placeholder="Select Date">
+                               placeholder="Enter Title">
                     </div>
 
                     <div class="five wide field">
                         <label>Session Subtitle</label>
 
                         <input ng-model="session.subTitle" type="text"
-                               placeholder="Select Date">
+                               placeholder="Enter Subtitle">
                     </div>
 
 
@@ -36,7 +36,7 @@
                             <label>Abstract</label>
 
                             <input ng-model="session.abstract" type="text"
-                                   placeholder="Select Date">
+                                   placeholder="Enter Abstract">
                         </div>
 
                         <div class="five wide field">
@@ -56,14 +56,14 @@
                             <label>Start Time</label>
 
                             <input id="datetimepicker" ng-model="session.startTime" type="text"
-                                   placeholder="Select Date">
+                                   placeholder="Select Start Time">
                         </div>
 
                         <div class="five wide field">
                             <label>End Time</label>
 
                             <input id="datetimepicker1" ng-model="session.endTime" type="text"
-                                   placeholder="Select Date">
+                                   placeholder="Select End Time">
                         </div>
                     </div>
 
@@ -89,42 +89,131 @@
                             </select>
                         </div>
                     </div>
+
+                    <div class="fields">
+                        <div class="five wide field">
+                            <div class="fields">
+                                <div class="fourteen wide field">
+                                    <label>Track</label>
+
+                                    <select class="ui search dropdown" ng-model="session.track">
+                                        <option value="">Select Track</option>
+                                        <option value="Android">Android</option>
+                                        <option value="Web">Web</option>
+                                        <option value="Python">Python</option>
+                                        <option value="Go Lang">Go Lang</option>
+                                    </select>
+                                </div>
+                                <div class="two wide field">
+                                    <label>.</label>
+                                    <button class="ui icon button"><i class="plus icon"></i></button>
+                                </div>
+                            </div>
+                            <table class="ui table celled">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Track</th>
+                                </tr>
+                                <tr>
+                                    <td>001</td>
+                                    <td>Android</td>
+                                </tr>
+                                <tr>
+                                    <td>004</td>
+                                    <td>Go Lang</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="five wide field">
+                            <div class="fields">
+                                <div class="fourteen wide field">
+                                    <label>Speaker(s)</label>
+
+                                    <select class="ui search dropdown" ng-model="session.speaker">
+                                        <option value="">Select Speaker(s)</option>
+                                        <option value="man1">Chanaka De Silva</option>
+                                        <option value="man2">Dewmal Nilanka</option>
+                                        <option value="man3">Pramoda Nadee</option>
+                                        <option value="man4">Cherith Gayashan</option>
+                                    </select>
+                                </div>
+                                <div class="two wide field">
+                                    <label>.</label>
+                                    <button class="ui icon button"><i class="plus icon"></i></button>
+                                </div>
+                            </div>
+                            <table class="ui table celled">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                </tr>
+                                <tr>
+                                    <td>001</td>
+                                    <td>Chanaka De Silva</td>
+                                </tr>
+                                <tr>
+                                    <td>004</td>
+                                    <td>Cherith Gayashan</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="ten wide field">
+                            <label>Description</label>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="fields">
+                        <div class="six wide field">
+
+                        </div>
+                        <div class="two wide field">
+                            <button class="ui button red">Reset All</button>
+                        </div>
+                        <div class="two wide field">
+                            <button class="ui button teal">Add Session</button>
+                        </div>
+                    </div>
                 </div>
-                <button class="ui button teal">Add Session</button>
+
             </div>
         </div>
     </div>
 
     <!--<div style="padding-left: 130px;padding-right: 20px;">-->
-        <!--<div class="ui raised segment">-->
+    <!--<div class="ui raised segment">-->
 
-            <!--<table class="ui sortable celled table">-->
-                <!--<thead>-->
-                <!--<tr>-->
-                    <!--<th>Item</th>-->
-                    <!--<th>Unit Cost</th>-->
-                    <!--<th>Quantity</th>-->
-                    <!--<th>Amount</th>-->
-                    <!--<th>Options</th>-->
-                <!--</tr>-->
-                <!--</thead>-->
-                <!--<tbody>-->
+    <!--<table class="ui sortable celled table">-->
+    <!--<thead>-->
+    <!--<tr>-->
+    <!--<th>Item</th>-->
+    <!--<th>Unit Cost</th>-->
+    <!--<th>Quantity</th>-->
+    <!--<th>Amount</th>-->
+    <!--<th>Options</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
 
-                <!--<tr ng-repeat="item in orderItems">-->
-                    <!--<td>{{item.itemName}}</td>-->
-                    <!--<td>{{item.quentity}}</td>-->
-                    <!--<td>{{item.rate}}</td>-->
-                    <!--<td>{{item.amount}}</td>-->
-                    <!--<td>-->
-                        <!--<button class="ui icon button red" ng-click="removeItem(item.customerOrderHasItemId)">-->
-                            <!--<i class="remove circle icon"></i>-->
-                        <!--</button>-->
-                    <!--</td>-->
-                <!--</tr>-->
+    <!--<tr ng-repeat="item in orderItems">-->
+    <!--<td>{{item.itemName}}</td>-->
+    <!--<td>{{item.quentity}}</td>-->
+    <!--<td>{{item.rate}}</td>-->
+    <!--<td>{{item.amount}}</td>-->
+    <!--<td>-->
+    <!--<button class="ui icon button red" ng-click="removeItem(item.customerOrderHasItemId)">-->
+    <!--<i class="remove circle icon"></i>-->
+    <!--</button>-->
+    <!--</td>-->
+    <!--</tr>-->
 
-                <!--</tbody>-->
-            <!--</table>-->
-        <!--</div>-->
+    <!--</tbody>-->
+    <!--</table>-->
+    <!--</div>-->
     <!--</div>-->
 
 </div>
