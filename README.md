@@ -1,7 +1,3 @@
-MintBooks
-
-This is a online accounting package can be used to manage all the transactions and taxes in small and mid scale businesses.
-
 
 * Quick summary
 * Version

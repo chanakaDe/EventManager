@@ -2,38 +2,35 @@
  * Created by ChanakaDeSilva on 2/16/2015.
  */
 
-module.factory('supplierService', function ($http) {
+module.factory('sessionService', function ($http) {
 
-    var supplierService = {
+    var sessionService = {
         /**
          * Get all roles from server
          *
          * @returns {*}
          */
 
-        getAllSuppliers: function () {
-
-            return $http({
-                method: "GET",
-                headers: headers,
-                url: host.supplier + '/search_all'
-            }).then(function (response) {
-                return response.data;
-            });
-
-        },
-        savePurchaseOrderService: function (data) {
+        saveSession: function (data) {
 
             return $http({
                 method: "POST",
-                data: data,
                 headers: headers,
-                url: host.purchase_order + '/save'
+                data: data,
+                url: host.session + '/save'
             }).then(function (response) {
                 return response.data;
             });
 
+        }, all: function () {
+            return $http({
+                method: "GET",
+                headers: headers,
+                url: host.session + '/getAllSessions'
+            }).then(function (response) {
+                return response.data;
+            });
         }
     };
-    return supplierService;
+    return sessionService;
 });
