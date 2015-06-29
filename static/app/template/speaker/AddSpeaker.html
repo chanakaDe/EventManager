@@ -1,0 +1,233 @@
+<!--Adding page content-->
+<div ng-controller="SpeakerController">
+
+    <div style="padding-left: 130px;padding-right: 20px;">
+        <div class="ui raised segment">
+            <a class="ui teal ribbon label">Speaker Management</a>
+            <a class="ui blue ribbon label">Add New Speaker</a>
+            <br><br><br>
+
+            <div class="ui form">
+                <div class="fields">
+                    <div class="five wide field">
+                        <label>Session Title</label>
+
+                        <!--<select class="ui search dropdown" ng-model="purchase.supplierId">-->
+                        <!--<option value="">Select Supplier</option>-->
+                        <!--<option ng-repeat="data in allSuppliers" value="{{data.supplierId}}">-->
+                        <!--{{data.supplierName}}-->
+                        <!--</option>-->
+                        <!--</select>-->
+
+                        <input ng-model="session.title" type="text"
+                               placeholder="Enter Title">
+                    </div>
+
+                    <div class="five wide field">
+                        <label>Session Subtitle</label>
+
+                        <input ng-model="session.subTitle" type="text"
+                               placeholder="Enter Subtitle">
+                    </div>
+
+
+                    <div class="fields">
+                        <div class="five wide field">
+                            <label>Abstract</label>
+
+                            <input ng-model="session.abstract" type="text"
+                                   placeholder="Enter Abstract">
+                        </div>
+
+                        <div class="five wide field">
+                            <label>Type</label>
+
+                            <select class="ui search dropdown" ng-model="session.type">
+                                <option value="">Select Type</option>
+                                <option value="Demo">Demo</option>
+                                <option value="Talk">Talk</option>
+                                <option value="Discussion">Discussion</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="five wide field">
+                            <label>Start Time</label>
+
+                            <input id="datetimepicker" ng-model="session.startTime" type="text"
+                                   placeholder="Select Start Time">
+                        </div>
+
+                        <div class="five wide field">
+                            <label>End Time</label>
+
+                            <input id="datetimepicker1" ng-model="session.endTime" type="text"
+                                   placeholder="Select End Time">
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="five wide field">
+                            <label>Level</label>
+
+                            <select class="ui search dropdown" ng-model="session.level">
+                                <option value="">Select Level</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Advanced">Advanced</option>
+                            </select>
+                        </div>
+
+                        <div class="five wide field">
+                            <label>Location</label>
+
+                            <select class="ui search dropdown" ng-model="session.location">
+                                <option value="">Select Location</option>
+                                <option value="Hall 1">Hall 1</option>
+                                <option value="Hall 2">Hall 2</option>
+                                <option value="Hall 3">Hall 3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="five wide field">
+                            <div class="fields">
+                                <div class="fourteen wide field">
+                                    <label>Track</label>
+
+                                    <select class="ui search dropdown" ng-model="session.track">
+                                        <option value="">Select Track</option>
+                                        <option value="Android">Android</option>
+                                        <option value="Web">Web</option>
+                                        <option value="Python">Python</option>
+                                        <option value="Go Lang">Go Lang</option>
+                                    </select>
+                                </div>
+                                <div class="two wide field">
+                                    <label>.</label>
+                                    <button class="ui icon button"><i class="plus icon"></i></button>
+                                </div>
+                            </div>
+                            <table class="ui table celled">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Track</th>
+                                </tr>
+                                <tr>
+                                    <td>001</td>
+                                    <td>Android</td>
+                                </tr>
+                                <tr>
+                                    <td>004</td>
+                                    <td>Go Lang</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="five wide field">
+                            <div class="fields">
+                                <div class="fourteen wide field">
+                                    <label>Speaker(s)</label>
+
+                                    <select class="ui search dropdown" ng-model="session.speaker">
+                                        <option value="">Select Speaker(s)</option>
+                                        <option value="man1">Chanaka De Silva</option>
+                                        <option value="man2">Dewmal Nilanka</option>
+                                        <option value="man3">Pramoda Nadee</option>
+                                        <option value="man4">Cherith Gayashan</option>
+                                    </select>
+                                </div>
+                                <div class="two wide field">
+                                    <label>.</label>
+                                    <button class="ui icon button"><i class="plus icon"></i></button>
+                                </div>
+                            </div>
+                            <table class="ui table celled">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                </tr>
+                                <tr>
+                                    <td>001</td>
+                                    <td>Chanaka De Silva</td>
+                                </tr>
+                                <tr>
+                                    <td>004</td>
+                                    <td>Cherith Gayashan</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="ten wide field">
+                            <label>Description</label>
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="fields">
+                        <div class="six wide field">
+
+                        </div>
+                        <div class="two wide field">
+                            <button class="ui button red">Reset All</button>
+                        </div>
+                        <div class="two wide field">
+                            <button class="ui button teal" ng-click="addSession()">Add Session</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.dropdown')
+            .dropdown({
+                // you can use any ui transition
+                transition: 'drop'
+            })
+    ;
+</script>
+
+<script>
+    jQuery('#datetimepicker').datetimepicker({
+        lang: 'en',
+        i18n: {
+            en: {
+                months: [
+                    'Januar', 'Februar', 'März', 'April',
+                    'Mai', 'Juni', 'Juli', 'August',
+                    'September', 'Oktober', 'November', 'Dezember'
+                ],
+                dayOfWeek: [
+                    "So.", "Mo", "Di", "Mi",
+                    "Do", "Fr", "Sa."
+                ]
+            }
+        },
+        timepicker: true,
+        format: 'Y-m-d/H:i'
+    });
+    jQuery('#datetimepicker1').datetimepicker({
+        lang: 'en',
+        i18n: {
+            en: {
+                months: [
+                    'Januar', 'Februar', 'März', 'April',
+                    'Mai', 'Juni', 'Juli', 'August',
+                    'September', 'Oktober', 'November', 'Dezember'
+                ],
+                dayOfWeek: [
+                    "So.", "Mo", "Di", "Mi",
+                    "Do", "Fr", "Sa."
+                ]
+            }
+        },
+        timepicker: true,
+        format: 'Y-m-d/H:i'
+    });
+</script>
