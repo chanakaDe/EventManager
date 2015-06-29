@@ -13,6 +13,7 @@ function SessionController($scope, sessionService) {
     $scope.addSession = function () {
 
         var session = $scope.session;
+        console.log(session);
 
         sessionService.saveSession(session).then(function (data) {
             console.log(data);
