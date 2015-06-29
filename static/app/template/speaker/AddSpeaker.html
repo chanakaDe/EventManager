@@ -334,29 +334,27 @@
                         </div>
 
                         <div class="five wide field">
-                            <label>Location</label>
+                            <label>Position</label>
 
-                            <select class="ui search dropdown" ng-model="session.location">
-                                <option value="">Select Location</option>
-                                <option value="Hall 1">Hall 1</option>
-                                <option value="Hall 2">Hall 2</option>
-                                <option value="Hall 3">Hall 3</option>
+                            <select class="ui search dropdown" ng-model="session.position">
+                                <option value="">Select Position</option>
+                                <option value="Student">Student</option>
+                                <option value="Employee">Employee</option>
+                                <option value="Employer">Employer</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="fields">
-                        <div class="five wide field">
+                        <div class="ten wide field">
                             <div class="fields">
                                 <div class="fourteen wide field">
-                                    <label>Track</label>
+                                    <label>Sessions</label>
 
-                                    <select class="ui search dropdown" ng-model="session.track">
-                                        <option value="">Select Track</option>
-                                        <option value="Android">Android</option>
-                                        <option value="Web">Web</option>
-                                        <option value="Python">Python</option>
-                                        <option value="Go Lang">Go Lang</option>
+                                    <select class="ui search dropdown" ng-model="session.session">
+                                        <option value="">Select sessions</option>
+                                        <option value="1">How to make OpenEvent</option>
+                                        <option value="2">How to write this Data api</option>
                                     </select>
                                 </div>
                                 <div class="two wide field">
@@ -379,47 +377,11 @@
                                 </tr>
                             </table>
                         </div>
-
-                        <div class="five wide field">
-                            <div class="fields">
-                                <div class="fourteen wide field">
-                                    <label>Speaker(s)</label>
-
-                                    <select class="ui search dropdown" ng-model="session.speaker">
-                                        <option value="">Select Speaker(s)</option>
-                                        <option value="man1">Chanaka De Silva</option>
-                                        <option value="man2">Dewmal Nilanka</option>
-                                        <option value="man3">Pramoda Nadee</option>
-                                        <option value="man4">Cherith Gayashan</option>
-                                    </select>
-                                </div>
-                                <div class="two wide field">
-                                    <label>.</label>
-                                    <button class="ui icon button"><i class="plus icon"></i></button>
-                                </div>
-                            </div>
-                            <table class="ui table celled">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                </tr>
-                                <tr>
-                                    <td>001</td>
-                                    <td>Chanaka De Silva</td>
-                                </tr>
-                                <tr>
-                                    <td>004</td>
-                                    <td>Cherith Gayashan</td>
-                                </tr>
-                            </table>
-                        </div>
                     </div>
-
-                    <div class="fields">
-                        <div class="ten wide field">
-                            <label>Description</label>
-                            <textarea></textarea>
-                        </div>
+                    <br>
+                    <div class="ten wide field">
+                        <label>Bio</label>
+                        <textarea></textarea>
                     </div>
                     <br>
 
@@ -431,7 +393,7 @@
                             <button class="ui button red">Reset All</button>
                         </div>
                         <div class="two wide field">
-                            <button class="ui button teal" ng-click="addSession()">Add Session</button>
+                            <button class="ui button teal" ng-click="addSession()">Add Speaker</button>
                         </div>
                     </div>
                 </div>
