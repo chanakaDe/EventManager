@@ -1,0 +1,55 @@
+<!--Adding page content-->
+<div ng-controller="SessionController">
+
+    <div style="padding-left: 130px;padding-right: 20px;">
+        <div class="ui raised segment">
+            <a class="ui teal ribbon label">Track Management</a>
+            <a class="ui blue ribbon label">Add New Track</a>
+            <br><br><br>
+
+            <div class="ui form">
+                <div class="fields">
+                    <div class="ten wide field">
+                        <label>Track Name</label>
+
+                        <input ng-model="track.name" type="text"
+                               placeholder="Enter Track Name">
+                    </div>
+                </div>
+                <br>
+
+                <div class="fields">
+                    <div class="ten wide field">
+                        <label>Track Description</label>
+
+                        <input ng-model="track.desc" type="text"
+                               placeholder="Enter Description">
+                    </div>
+                </div>
+                <br>
+
+                <div class="fields">
+                    <div class="six wide field">
+
+                    </div>
+                    <div class="two wide field">
+                        <button class="ui button red">Reset All</button>
+                    </div>
+                    <div class="two wide field">
+                        <button class="ui button teal" ng-click="addSession()">Add Track</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.dropdown')
+            .dropdown({
+                // you can use any ui transition
+                transition: 'drop'
+            })
+    ;
+</script>
