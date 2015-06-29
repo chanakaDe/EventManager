@@ -10,6 +10,9 @@ module.config(function ($routeProvider) {
         }).when('/add_session', {
             templateUrl: 'static/app/template/session/AddSession.html',
             controller: ''
+        }).when('/add_speaker', {
+            templateUrl: 'static/app/template/speaker/AddSpeaker.html',
+            controller: ''
         }).otherwise({
             redirectTo: '/'
         });
