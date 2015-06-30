@@ -19,6 +19,9 @@ module.config(function ($routeProvider) {
         }).when('/add_sponsor', {
             templateUrl: 'static/app/template/sponser/AddSponser.html',
             controller: ''
+        }).when('/add_location', {
+            templateUrl: 'static/app/template/location/AddLocation.html',
+            controller: ''
         }).otherwise({
             redirectTo: '/'
         });

@@ -3,9 +3,12 @@
  */
 function LocationController($scope, locationService) {
 
+    $scope.new_lat = "";
+    $scope.new_long = "";
+
     var mapOptions = {
-        zoom: 15,
-        center: new google.maps.LatLng(1.931747, 73.541439),
+        zoom: 10,
+        center: new google.maps.LatLng(52.463219, 13.285061),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
@@ -15,42 +18,12 @@ function LocationController($scope, locationService) {
 
     var infoWindow = new google.maps.InfoWindow();
 
-    var createOrderPoint = function (info) {
-
-        var marker = new google.maps.Marker({
-            map: $scope.map,
-            position: new google.maps.LatLng(info.latitude, info.longitude),
-            title: info.label
-        });
-        marker.content = '<div class="infoWindowContent">' + info.city + " - " + info.label + "  -  " + info.pumpingType + '</div>';
-
-        google.maps.event.addListener(marker, 'click', function () {
-
-            var infoWindowHtml = ('<h2>' + marker.title + '</h2>' + marker.content);
-            console.log(infoWindowHtml);
-            infoWindow.setContent(infoWindowHtml);
-            infoWindow.open($scope.map, marker);
-        });
-        $scope.markers.push(marker);
-    };
-
-    for (i = 0; i < $scope.allDeliveryPoints.length; i++) {
-        createOrderPoint($scope.allDeliveryPoints[i]);
-    }
-
     google.maps.event.addListener(map, 'click', function (e) {
-
-        $scope.pump.latitude = "";
-        $scope.pump.longitude = "";
 
         console.log("GET LOCATION ACTIVATED !!!!");
         alert("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
-        $scope.pump.latitude = e.latLng.lat();
-        $scope.pump.longitude = e.latLng.lng();
-        $scope.$apply();
-        console.log(e.latLng.lat(), $scope.pump.latitude);
-        console.log(e.latLng.lng(), $scope.pump.longitude);
-
+        $scope.new_lat = e.latLng.lat();
+        $scope.new_long = e.latLng.lng();
 //        Adding marker
         var marker = new google.maps.Marker({
             map: $scope.map,
