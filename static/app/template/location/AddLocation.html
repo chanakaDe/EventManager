@@ -1,0 +1,57 @@
+<!--Adding page content-->
+<style>
+    #map1 {
+        height: 420px;
+        width: auto;
+    }
+
+    .infoWindowContent {
+        font-size: 14px !important;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+    }
+
+    h2 {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+</style>
+
+<div ng-controller="LocationController">
+
+    <div style="padding-left: 130px;padding-right: 20px;">
+        <div class="ui raised segment">
+            <a class="ui teal ribbon label">Location Management</a>
+            <a class="ui blue ribbon label">Add New Location</a>
+            <br><br><br>
+
+            <div class="ui form">
+                <div class="fields">
+                    <div class="sixteen wide field">
+                        <div id="map1"></div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="fields">
+                    <div class="six wide field">
+                    </div>
+                    <div class="two wide field">
+                        <button class="ui button red">Reset All</button>
+                    </div>
+                    <div class="two wide field">
+                        <button class="ui button teal" ng-click="addNewTrack()">Save Location</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.dropdown')
+            .dropdown({
+                // you can use any ui transition
+                transition: 'drop'
+            })
+    ;
+</script>
