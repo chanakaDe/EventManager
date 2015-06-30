@@ -3,27 +3,36 @@
 
     <div style="padding-left: 130px;padding-right: 20px;">
         <div class="ui raised segment">
-            <a class="ui teal ribbon label">Track Management</a>
-            <a class="ui blue ribbon label">Add New Track</a>
+            <a class="ui teal ribbon label">Sponsor Management</a>
+            <a class="ui blue ribbon label">Add New Sponsor</a>
             <br><br><br>
 
             <div class="ui form">
                 <div class="fields">
                     <div class="ten wide field">
-                        <label>Track Name</label>
+                        <label>Sponsor Name</label>
 
-                        <input ng-model="track.name" type="text"
-                               placeholder="Enter Track Name">
+                        <input ng-model="sponsor.name" type="text"
+                               placeholder="Enter Sponsor Name">
                     </div>
                 </div>
                 <br>
 
                 <div class="fields">
                     <div class="ten wide field">
-                        <label>Track Description</label>
+                        <label>Sponsor URL</label>
 
-                        <input ng-model="track.desc" type="text"
-                               placeholder="Enter Description">
+                        <input ng-model="sponsor.url" type="text"
+                               placeholder="Enter Sponsor URL">
+                    </div>
+                </div>
+                <br>
+
+                <div class="fields">
+                    <div class="ten wide field">
+                        <label>Sponsor Logo</label>
+
+                        <input ng-model="sponsor.logo" type="file">
                     </div>
                 </div>
                 <br>
@@ -35,7 +44,7 @@
                         <button class="ui button red">Reset All</button>
                     </div>
                     <div class="two wide field">
-                        <button class="ui button teal" ng-click="addNewTrack()">Add Track</button>
+                        <button class="ui button teal" ng-click="addNewTrack()">Add Sponsor</button>
                     </div>
                 </div>
             </div>
