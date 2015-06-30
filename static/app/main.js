@@ -13,6 +13,9 @@ module.config(function ($routeProvider) {
         }).when('/add_speaker', {
             templateUrl: 'static/app/template/speaker/AddSpeaker.html',
             controller: ''
+        }).when('/add_track', {
+            templateUrl: 'static/app/template/track/AddTrack.html',
+            controller: ''
         }).otherwise({
             redirectTo: '/'
         });
